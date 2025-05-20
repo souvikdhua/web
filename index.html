@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" id="logo">Music Hub</a>
+            <ul>
+                <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="search">Search</a></li>
+                <li><a href="#" class="nav-link" data-page="library">Library</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="search-section" class="page-content">
+            <h1>Search</h1>
+            <div id="search-container">
+                <input type="text" id="search-bar" placeholder="Search for songs, artists, albums...">
+                <button id="search-button">Search</button>
+            </div>
+            <div id="results-container">
+                <!-- Search results will be displayed here -->
+            </div>
+        </div>
+
+        <div id="home-section" class="page-content" style="display:none;">
+            <h1>Home</h1>
+            <p>Welcome to Music Hub! Discover new music or listen to your favorites.</p>
+            <!-- Potential content: featured playlists, new releases, etc. -->
+        </div>
+        
+        <div id="library-section" class="page-content" style="display:none;">
+            <h1>My Library</h1>
+            <div id="playlist-display-area">
+                <h2>My Playlists</h2>
+                <ul id="playlist-list">
+                    <!-- Playlists will be listed here -->
+                </ul>
+            </div>
+            <button id="create-playlist-button">Create New Playlist</button>
+            <div id="playlist-creation-modal" style="display:none;">
+                 <input type="text" id="new-playlist-name" placeholder="Enter playlist name">
+                 <button id="save-playlist-button">Save Playlist</button>
+                 <button id="cancel-playlist-button">Cancel</button>
+            </div>
+        </div>
+
+        <!-- This is where the YouTube player iframe will be injected by the API -->
+        <div id="player-container" style="display:none;"></div>
+    </main>
+
+    <footer id="player-controls-container">
+        <div id="current-track-info">
+            <span id="track-title">No song selected</span>
+            <span id="track-artist"></span>
+        </div>
+        <div id="player-buttons">
+            <button id="prev-button">⏮</button>
+            <button id="play-pause-button">▶</button>
+            <button id="next-button">⏭</button>
+        </div>
+        <div id="progress-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress-bar" value="0" max="100">
+            <span id="duration">0:00</span>
+        </div>
+        <div id="volume-container">
+            <span>🔊</span>
+            <input type="range" id="volume-slider" min="0" max="100" value="100">
+        </div>
+    </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
